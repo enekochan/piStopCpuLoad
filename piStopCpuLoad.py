@@ -9,19 +9,17 @@ R = 18
 A = 15
 G = 14
 
+def turnOffLights():
+    GPIO.output(R, False)
+    GPIO.output(A, False)
+    GPIO.output(G, False)
+
 def configureGPIO():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(R, GPIO.OUT)
     GPIO.setup(A, GPIO.OUT)
     GPIO.setup(G, GPIO.OUT)
-    GPIO.output(R, False)
-    GPIO.output(A, False)
-    GPIO.output(G, False)
-
-def turnOffLights():
-    GPIO.output(R, False)
-    GPIO.output(A, False)
-    GPIO.output(G, False)
+    turnOffLights()
 
 def getTimeList():
     statFile = file("/proc/stat", "r")
